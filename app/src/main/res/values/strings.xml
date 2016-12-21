@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MVVM Pattern</string>
+    <string name="network_failed">Please connect and try again.</string>
+    <string name="timed_out">Connection timed out.Please try again.</string>
+    <string name="internal_error">Server error occurred. Please try again later.</string>
+    <string name="alert">Oops!</string>
+    <string name="something_went">Something went wrong!</string>
+    <string name="email">saveendhiman@gmail.com</string>
+    <string name="selection">Select type</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

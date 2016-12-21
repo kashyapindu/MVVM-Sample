@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+    defaultConfig {
+        applicationId "com.mvvmpattern"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.loggerVersion"
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    compile "io.reactivex:rxjava:$rootProject.ext.rxJavaVersion"
+    compile "io.reactivex:rxandroid:$rootProject.ext.rxAndroidVersion"
+    provided "org.glassfish:javax.annotation:$rootProject.ext.annotationVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
+    compile "com.pnikosis:materialish-progress:$rootProject.ext.materialishProgressLibversion"
+    compile "com.squareup.picasso:picasso:$rootProject.ext.picassoVersion"
+    compile "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+    compile "com.android.support:cardview-v7:$rootProject.ext.supportLibVersion"
+
+
+
+
+
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    testCompile 'junit:junit:4.12'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+}

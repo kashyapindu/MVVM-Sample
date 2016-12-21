@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="FavouriteViewModel"
+            type="com.mvvmpattern.module.mvvmmodule.favouritemodule.FavouriteViewModel"/>
+
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_favourite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.mvvmpattern.module.mvvmmodule.favouritemodule.FavouriteActivity">
+
+
+        <RelativeLayout
+            android:id="@+id/rlhomedetails_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/tvhomedetails_backbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:scaleType="center"
+                android:onClick="@{FavouriteViewModel.onBackClick()}"
+                android:src="@drawable/ic_arrow_back_black_24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_title"
+                android:layout_alignBaseline="@+id/tvhomedetails_backbtn"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Favourite"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/activity_horizontal_margin"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/default_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                android:text="No favourite Item"
+                android:textSize="@dimen/activity_horizontal_margin"
+                android:textStyle="bold"
+                android:visibility="@{FavouriteViewModel.defaultTextVisibilty}"/>
+
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_favourite_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    tools:listitem="@layout/adapter_searchview"
+                    android:visibility="@{FavouriteViewModel.recyclerViewVisibility}"
+                    />
+
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

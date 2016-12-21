@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+
+        <variable
+            name="ItemFavouriteViewModel"
+            type="com.mvvmpattern.module.mvvmmodule.favouritemodule.ItemFavouriteViewModel">
+
+        </variable>
+
+
+    </data>
+
+    <RelativeLayout
+        xmlns:card_view="http://schemas.android.com/tools"
+        android:id="@+id/rladapter_mainlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/detail_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            card_view:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:id="@+id/searchresult_container_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center|bottom"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dummy_box">
+
+                    <ImageView
+                        android:id="@+id/ivsearchresultbg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        tools:imageUrl="@{ItemFavouriteViewModel.destinationPicture}"/>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical">
+
+                    <RatingBar
+                        android:id="@+id/searchresult_ratingBar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:numStars="5"
+                        android:rating="2.0"
+                        android:scaleX="1"
+                        android:scaleY="1"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="99+ Reviews"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivsearchresult_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/dummy_user"
+                        app:civ_border_color="@color/black"
+                        app:imageUrl="@{ItemFavouriteViewModel.pictureProfile}"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:paddingLeft="5dp">
+
+                        <TextView
+                            android:id="@+id/tvsearchresult_Name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{ItemFavouriteViewModel.name}"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/tvsearchresult_weight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@{ItemFavouriteViewModel.weight}"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/tvsearchresult_destination"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@{ItemFavouriteViewModel.trip}"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"/>
+
+                    <LinearLayout
+                        android:id="@+id/llsearchresult_fav1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/ivsearchresult_favourite"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@{ItemFavouriteViewModel.isFavourite==1? @drawable/heart_hover_ic : @drawable/heart_ic}">
+
+
+                        </ImageView>
+
+<!--
+                            android:src="@{ItemFavouriteViewModel.isFavouriteFlag(),default=@drawable/heart_ic}"
+-->
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+    </RelativeLayout>
+
+
+</layout>
+
+
+
+

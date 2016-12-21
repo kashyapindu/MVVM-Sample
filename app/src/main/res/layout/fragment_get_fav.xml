@@ -1,0 +1,54 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="FavouriteViewModel"
+            type="com.mvvmpattern.module.mvvmmodule.favouritemodule.FavouriteViewModel"/>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.mvvmpattern.module.mvvmmodule.fragmentmodule.GetFavFragment">
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/default_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="No get favourite Item"
+                android:textSize="@dimen/activity_horizontal_margin"
+                android:textStyle="bold"
+                android:visibility="@{FavouriteViewModel.defaultGetFavTextVisibilty}"/>
+
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_favourite_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{FavouriteViewModel.recyclerViewVisibility}"
+                    tools:listitem="@layout/adapter_searchview"
+                    />
+
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </RelativeLayout>
+
+</layout>
