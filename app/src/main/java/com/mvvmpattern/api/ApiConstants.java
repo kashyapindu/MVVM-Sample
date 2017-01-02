@@ -15,7 +15,7 @@ public interface ApiConstants {
     String GOOGLE_BASE_URL="https://maps.googleapis.com/";
 
     //    String CONTROLLER = "/TravelerApp/";
-    String CONTROLLER = "/TravelerApp2/";
+    String CONTROLLER = "/********/";
 
     String LOGIN = CONTROLLER + "/users/user_login";
     String GET_FAVOURITE=CONTROLLER + "users/get_favourite";
