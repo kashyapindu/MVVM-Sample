@@ -11,7 +11,7 @@ public interface ApiConstants {
     String STATUS_SUCCESS_String = "Success";
     String GOOGLE_SUCCESS = "OK";
     String STATUS_SESSION_EXPIRE = "203";
-    String BASE_URL = "http://softprodigyphp.in/";/* "http://staging.softprodigy.in/";*/
+    String BASE_URL = "http://********.in/";
     String GOOGLE_BASE_URL="https://maps.googleapis.com/";
 
     //    String CONTROLLER = "/TravelerApp/";
